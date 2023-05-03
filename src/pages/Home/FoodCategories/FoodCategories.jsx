@@ -15,7 +15,8 @@ const FoodCategories = () => {
         fetch('')
     }, [])
     return (
-        <div className='container mx-auto rounded-r-xl'>
+        <div className='container mx-auto rounded-xl'>
+            <h1 className='text-center text-5xl font-semibold my-10'>Food Categories</h1>
             <Swiper
                 slidesPerView={3}
                 spaceBetween={30}
@@ -24,27 +25,27 @@ const FoodCategories = () => {
                     clickable: true,
                 }}
                 modules={[Pagination]}
-                className="mySwiper "
+                className="mySwiper"
             >
                 <SwiperSlide className='h-100'>
                     <img className='w-full h-full object-cover' src={chinese} alt="" />
-                    Slide 1
+                    <h1 className='text-3xl font-semibold my-3 py-3 rounded border text-center'>Chinese</h1>
                 </SwiperSlide>
                 <SwiperSlide className='h-100'>
                     <img className='w-full h-full object-cover' src={japanese} alt="" />
-                    Slide 2
+                    <h1 className='text-3xl font-semibold my-3 py-3 rounded border text-center'>Japanese</h1>
                 </SwiperSlide>
                 <SwiperSlide className='h-100'>
                     <img className='w-full h-full object-cover' src={indian} alt="" />
-                    Slide 3
+                    <h1 className='text-3xl font-semibold my-3 py-3 rounded border text-center'>Indian</h1>
                 </SwiperSlide>
                 <SwiperSlide className='h-100'>
                     <img className='w-full h-full object-cover' src={maxican} alt="" />
-                    Slide 4
+                    <h1 className='text-3xl font-semibold my-3 py-3 rounded border text-center'>Maxican</h1>
                 </SwiperSlide>
                 <SwiperSlide className='h-100'>
                     <img className='w-full h-full object-cover' src={italian} alt="" />
-                    Slide 5
+                    <h1 className='text-3xl font-semibold my-3 py-3 rounded border text-center'>italian</h1>
                 </SwiperSlide>
             </Swiper>
         </div>

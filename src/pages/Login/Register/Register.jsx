@@ -4,7 +4,7 @@ import { AuthContext } from '../../../provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
-    const { createUser, auth } = useContext(AuthContext);
+    const { createUser } = useContext(AuthContext);
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
     const handleRegister = event => {
@@ -16,6 +16,9 @@ const Register = () => {
         const photo = form.photo.value;
         setError('');
         setSuccess('');
+        if( email == '' || password == ''){
+            setError('Please give email and password')
+        }
         if (password.length < 6) {
             setError('Password must contains 6 characters.')
             return;
@@ -30,21 +33,21 @@ const Register = () => {
             .catch(error => {
                 console.log(error);
             });
-        
+
         form.reset();
 
     }
-    const updateUserData = (user, name, photo) =>{
-        updateProfile(user,{
-            displayName:name,
+    const updateUserData = (user, name, photo) => {
+        updateProfile(user, {
+            displayName: name,
             photoURL: photo
         })
-        .then(()=>{
-            console.log('user name updated');
-        })
-        .catch(error=>{
-            console.log(error);
-        })
+            .then(() => {
+                console.log('user name updated');
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -85,9 +88,10 @@ const Register = () => {
                         <div className="form-control mt-3">
                             <button type='submit' className="px-4 py-2 rounded-lg font-semibold text-black bg-orange-400">Register</button>
                         </div>
-                        <p>{error}</p>
-                        <p>{success}</p>
                     </form>
+
+                    <p className='text-red-600 text-center mb-3 font-semibold'>{error}</p>
+                    <p className='text-success text-center mb-3 font-semibold'>{success}</p>
                 </div>
             </div>
         </div>

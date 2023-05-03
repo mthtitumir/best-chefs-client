@@ -21,8 +21,8 @@ const Foods = () => {
                     ></FoodCard>)
                 }
             </div>
-            <div className='text-center my-5'>
-                <button className="btn btn-primary mx-auto">Explore More</button>
+            <div className='text-center my-8'>
+                <button className="btn btn-outline hover:bg-orange-500 mx-auto">Explore More</button>
             </div>
         </div>
     );

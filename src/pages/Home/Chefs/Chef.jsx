@@ -1,4 +1,6 @@
 import React from 'react';
+import { AiFillLike } from 'react-icons/ai';
+import { MdFoodBank, MdPlayLesson } from 'react-icons/md';
 import { Link, useParams } from 'react-router-dom';
 
 const Chef = ({ chef }) => {
@@ -11,12 +13,12 @@ const Chef = ({ chef }) => {
                 <img src={picture} alt="Shoes" className="rounded-[50%] border h-40" />
             </figure>
             <div className="card-body items-center">
-                <h2 className="card-title">{name}</h2>
-                <p>Likes : {likes}</p>
-                <p>Number of Recipes: {num_recipes}</p>
-                <p>Experiences: {years_of_experience} years</p>
+                <h2 className="card-title text-3xl">{name}</h2>
+                <p className='font-semibold mt-'><AiFillLike className='inline text-orange-600'></AiFillLike> Likes : {likes}</p>
+                <p className='font-semibold mt-'><MdFoodBank className='inline text-orange-600'></MdFoodBank> Number of Recipes: {num_recipes}</p>
+                <p className='font-semibold mt-'><MdPlayLesson className='inline text-orange-600'></MdPlayLesson> Experiences: {years_of_experience} years</p>
                 <div className="card-actions">
-                    <Link to={`/recipes/${chefId}`}><button className="btn bg-orange-400">View Recipes</button></Link>
+                    <Link to={`/recipes/${chefId}`}><button className="px-3 py-2 font-semibold text-white rounded-lg bg-orange-600 hover:btn-outline">View Recipes</button></Link>
                 </div>
             </div>
         </div>

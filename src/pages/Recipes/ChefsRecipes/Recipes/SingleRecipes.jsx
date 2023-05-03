@@ -1,22 +1,33 @@
 import React from 'react';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const SingleRecipes = ({ singleRecipes }) => {
-    const { category, image, recipe_name, ingredients, cooking_method, rating } = singleRecipes;
+    const { category, image, recipe_name, ingredients, cooking_method, rating, id } = singleRecipes;
     console.log(ingredients);
+    const notify = () => toast("Recipe Added to Favorite!");
+    const handleOnClick = event => {
+        event.currentTarget.disable = true;
+    }
     return (
-        <div className="bg-base-200">
-            <img src={image} className=" rounded-lg shadow-2xl" />
-            <div className="hero-content flex-col lg:flex-row">
-                <div className='w-1/2'>
-                    <h1 className='text-lg font-semibold'>INGREDIENTS & SUBSTITUTIONS : </h1>
+        <div className=" card full bg-base-100 shadow-xl mt-3">
+            <h2 className="card-title text-3xl px-5 py-8 text-center">{id}. {recipe_name}</h2>
+            <figure><img src={image} alt="Shoes" /></figure>
+            <div className="card-body">
+                <h1 className='text-3xl font-semibold text-center my-3'>Ingredients</h1>
+                <div className='text-center mx-auto'>
+
                     {
-                        ingredients.map(ingredient => <p className='text-xl border px-5 py-2 rounded-lg mb-1 bg-red-300 '> o {ingredient}</p>)
+                        ingredients.slice(0, 5).map(ingredient => <p key={category} className='text-xl border px-5 py-2 rounded-lg mb-1 bg-base-200 text-left'> o {ingredient}</p>)
                     }
                 </div>
-                <div className='w-1/2'>
+                <div className='text-center'>
+                    <h1 className='text-3xl font-semibold text-center my-3'>Cooking Steps</h1>
                     <p>{cooking_method}</p>
                 </div>
             </div>
+            <button onClick={notify} className='px-3 py-2 rounded mb-5 text-white font-semibold bg-red-500 hover:bg-red-700 w-1/12 mx-auto'>Favourite</button>
+
+            <ToastContainer />
         </div>
     );
 };
