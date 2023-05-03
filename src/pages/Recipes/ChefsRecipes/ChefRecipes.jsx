@@ -13,13 +13,13 @@ const ChefRecipes = () => {
     }, []);
     const { id } = useParams();
     console.log(chefs);
-    const chef = chefs.find(searchingChef => searchingChef.chefId===id);
-    console.log(chef);
+    const chef = chefs.find(searchingChef => searchingChef.chefId===id) || {};
+    console.log(chef, id);
     const chefRecipes = recipes.filter(recipe => recipe.category===id);
     console.log(chefRecipes);
     return (
         <div className='container mx-auto'>
-            {/* <ChefProfileDetails chef={chef}></ChefProfileDetails> */}
+            <ChefProfileDetails chef={chef}></ChefProfileDetails>
             <Recipes chefRecipes={chefRecipes}></Recipes>
         </div>
     );

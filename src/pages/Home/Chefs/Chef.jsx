@@ -6,7 +6,7 @@ const Chef = ({ chef }) => {
     console.log(id);
     const { chefId, picture, likes, name, num_recipes, years_of_experience } = chef;
     return (
-        <div className="card w-full bg-orange-400 shadow-xl">
+        <div className="card w-full bg-yellow-300 shadow-xl">
             <figure className="px-10 pt-10">
                 <img src={picture} alt="Shoes" className="rounded-[50%] border h-40" />
             </figure>
@@ -16,7 +16,7 @@ const Chef = ({ chef }) => {
                 <p>Number of Recipes: {num_recipes}</p>
                 <p>Experiences: {years_of_experience} years</p>
                 <div className="card-actions">
-                    <Link to={`/recipes/${chefId}`}><button className="btn btn-warning">View Recipes</button></Link>
+                    <Link to={`/recipes/${chefId}`}><button className="btn bg-orange-400">View Recipes</button></Link>
                 </div>
             </div>
         </div>
