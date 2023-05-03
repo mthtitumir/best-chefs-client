@@ -25,7 +25,7 @@ const SingleRecipes = ({ singleRecipes }) => {
                     <p>{cooking_method}</p>
                 </div>
             </div>
-            <button onClick={notify} className='px-3 py-2 rounded mb-5 text-white font-semibold bg-red-500 hover:bg-red-700 w-1/12 mx-auto'>Favourite</button>
+            <button onClick={notify} className='px-3 py-2 rounded mb-5 text-white font-semibold bg-orange-500 hover:bg-orange-700 w-1/12 mx-auto'>Favourite</button>
 
             <ToastContainer />
         </div>

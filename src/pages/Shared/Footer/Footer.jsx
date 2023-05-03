@@ -13,10 +13,10 @@ const Footer = () => {
             </div>
             <div>
                 <div className="grid grid-flow-col gap-4">
-                    <Link><FaFacebook className='text-sky-700'></FaFacebook></Link>
-                    <Link><FaYoutube className='text-red-600'></FaYoutube></Link>
-                    <Link><FaTwitter className='text-sky-500'></FaTwitter></Link>
-                    <Link><FaInstagram className='text-orange-600'></FaInstagram></Link>
+                    <Link><FaFacebook size={'2em'} className='text-sky-700'></FaFacebook></Link>
+                    <Link><FaYoutube size={'2em'} className='text-red-600'></FaYoutube></Link>
+                    <Link><FaTwitter size={'2em'} className='text-sky-500'></FaTwitter></Link>
+                    <Link><FaInstagram size={'2em'} className='text-orange-600'></FaInstagram></Link>
                 </div>
             </div>
             <div>
