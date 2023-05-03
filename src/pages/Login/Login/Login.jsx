@@ -1,8 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { AuthContext } from '../../../provider/AuthProvider';
 
 const Login = () => {
+    const {auth} = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
+    const handleGoogleLogin = () => {
+        signInWithPopup(auth, googleProvider)
+        .then(result =>{
+            const loggedUser = result.user;
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+    const handleGithubLogin = () => {
+        signInWithPopup(auth, googleProvider)
+        .then(result =>{
+            const loggedUser = result.user;
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
@@ -22,7 +45,7 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="text" placeholder="password" name='password' className="input input-bordered" required />
+                                <input type="password" placeholder="password" name='password' className="input input-bordered" required />
                                 <label className="label">
                                     <p className='text-sm'>Don't Have an Account?</p>
                                     <Link to="/register" className="label-text-alt link link-hover font-semibold text-primary">Please Register!</Link>
@@ -35,9 +58,9 @@ const Login = () => {
                         <div>
                             <h2 className='text-center font-semibold'>Login With</h2>
                             <div className='flex justify-evenly my-5'>
-                                <button className='bg-black p-3 rounded-[50%]'><FaGithub className='text-white'></FaGithub></button>
+                                <button onClick={handleGithubLogin} className='bg-black p-3 rounded-[50%]'><FaGithub className='text-white'></FaGithub></button>
                                 <button className='bg-primary p-3 rounded-[50%]'><FaFacebook className='text-white'></FaFacebook></button>
-                                <button className='bg-red-700 p-3 rounded-[50%]'><FaGoogle className='text-white'></FaGoogle></button>
+                                <button onClick={handleGoogleLogin} className='bg-red-700 p-3 rounded-[50%]'><FaGoogle className='text-white'></FaGoogle></button>
                             </div>
                         </div>
                     </div>

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Chef = ({ chef }) => {
-    const { id } = useParams();
-    console.log(id);
-    const { chefId, picture, likes, name, num_recipes, years_of_experience } = chef;
+const ChefProfileDetails = ({ chef }) => {
+    console.log(chef);
+    const { picture, likes, name, num_recipes, years_of_experience } = chef;
+    console.log(picture);
     return (
-        <div className="card w-full bg-orange-400 shadow-xl">
+        <div className="card w-full bg-base-400 rounded-[50%] shadow-xl">
             <figure className="px-10 pt-10">
                 <img src={picture} alt="Shoes" className="rounded-[50%] border h-40" />
             </figure>
@@ -15,12 +15,9 @@ const Chef = ({ chef }) => {
                 <p>Likes : {likes}</p>
                 <p>Number of Recipes: {num_recipes}</p>
                 <p>Experiences: {years_of_experience} years</p>
-                <div className="card-actions">
-                    <Link to={`/recipes/${chefId}`}><button className="btn btn-warning">View Recipes</button></Link>
-                </div>
             </div>
         </div>
     );
 };
 
-export default Chef;
+export default ChefProfileDetails;

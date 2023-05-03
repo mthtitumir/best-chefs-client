@@ -15,16 +15,16 @@ const FoodCategories = () => {
         fetch('')
     }, [])
     return (
-        <div>
+        <div className='container mx-auto rounded-r-xl'>
             <Swiper
-                slidesPerView={4}
+                slidesPerView={3}
                 spaceBetween={30}
                 centeredSlides={false}
                 pagination={{
                     clickable: true,
                 }}
                 modules={[Pagination]}
-                className="mySwiper"
+                className="mySwiper "
             >
                 <SwiperSlide className='h-100'>
                     <img className='w-full h-full object-cover' src={chinese} alt="" />
