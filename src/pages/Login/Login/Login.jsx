@@ -1,28 +1,46 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
 import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { AuthContext } from '../../../provider/AuthProvider';
 
 const Login = () => {
-    const {auth} = useContext(AuthContext);
+    const [success, setSuccess] = useState("");
+    const [error, setError] = useState("");
+    const { auth, signIn } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
     const handleGoogleLogin = () => {
         signInWithPopup(auth, googleProvider)
-        .then(result =>{
-            const loggedUser = result.user;
-        })
-        .catch(error => {
-            console.log(error);
-        })
+            .then(result => {
+                const loggedUser = result.user;
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
     const handleGithubLogin = () => {
-        signInWithPopup(auth, googleProvider)
+        signInWithPopup(auth, githubProvider)
+            .then(result => {
+                const loggedUser = result.user;
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+    const handleFormSubmit = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        setError('');
+        setSuccess('');
+        signIn(email, password)
         .then(result =>{
             const loggedUser = result.user;
+            console.log('user logged successfully');
         })
-        .catch(error => {
+        .catch(error=>{
             console.log(error);
         })
     }
@@ -34,7 +52,7 @@ const Login = () => {
                         <h1 className="text-3xl font-bold">Login now!</h1>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form className="card-body">
+                        <form onSubmit={handleFormSubmit} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>

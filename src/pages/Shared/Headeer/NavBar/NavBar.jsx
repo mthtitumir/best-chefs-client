@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../../../assets/logo-bc.png'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../../provider/AuthProvider';
 
 const NavBar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error));
+    }
     return (
         <div className="navbar bg-yellow-300 container mx-auto">
             <div className="navbar-start">
@@ -30,8 +37,12 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                
-                <Link to='login' className="px-4 py-1 rounded-lg font-semibold text-black bg-orange-400">Login</Link>
+                {user ?
+                    <div className="flex gap-2">
+                        <img className='h-9 rounded-[50%]' src={user.photoURL} alt="" />
+                        <button onClick={handleLogOut} className="px-4 py-1 rounded-lg font-semibold text-black bg-orange-400">Logout</button>
+                    </div> :
+                    <Link to='login' className="px-4 py-1 rounded-lg font-semibold text-black bg-orange-400">Login</Link>}
             </div>
         </div>
     );
