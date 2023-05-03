@@ -1,7 +1,6 @@
 import React from 'react';
 
 import pic1 from "../../../../assets/banner-slider/ban1.jpg"
-import pic2 from "../../../../assets/banner-slider/ban2.jpg"
 import pic3 from "../../../../assets/banner-slider/ban3.jpg"
 import pic4 from "../../../../assets/banner-slider/ban4.jpg"
 import pic5 from "../../../../assets/banner-slider/ban5.jpg"

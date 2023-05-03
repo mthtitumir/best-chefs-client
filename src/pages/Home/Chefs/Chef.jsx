@@ -2,6 +2,7 @@ import React from 'react';
 import { AiFillLike } from 'react-icons/ai';
 import { MdFoodBank, MdPlayLesson } from 'react-icons/md';
 import { Link, useParams } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
 
 const Chef = ({ chef }) => {
     const { id } = useParams();
@@ -10,7 +11,7 @@ const Chef = ({ chef }) => {
     return (
         <div className="card w-full bg-yellow-300 shadow-xl">
             <figure className="px-10 pt-10">
-                <img src={picture} alt="Shoes" className="rounded-[50%] border h-40" />
+                <LazyLoad effect={blur}><img src={picture} alt="Shoes" className="rounded-[50%] border h-40" /></LazyLoad>
             </figure>
             <div className="card-body items-center">
                 <h2 className="card-title text-3xl">{name}</h2>

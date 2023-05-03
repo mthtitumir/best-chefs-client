@@ -41,7 +41,8 @@ const router = createBrowserRouter([
     },
     {
         path: '/blog',
-        element: <BlogLayout></BlogLayout>
+        element: <BlogLayout></BlogLayout>,
+        loader: () => fetch('http://localhost:7000/blogs')
     }
 ]);
 export default router;
