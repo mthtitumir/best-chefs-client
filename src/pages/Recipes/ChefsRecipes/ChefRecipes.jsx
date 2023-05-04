@@ -20,6 +20,7 @@ const ChefRecipes = () => {
     return (
         <div className='container mx-auto my-5'>
             <ChefProfileDetails chef={chef}></ChefProfileDetails>
+            
             <Recipes chefRecipes={chefRecipes}></Recipes>
         </div>
     );

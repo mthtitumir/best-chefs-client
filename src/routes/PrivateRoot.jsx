@@ -8,7 +8,9 @@ const PrivateRoot = ({children}) => {
     const location = useLocation();
     console.log('user ekhon private roote ase', user);
     if(loading){
-        return <progress className="progress w-1/2 mt-10 text-center mx-auto"></progress>;
+        return <div className='flex items-center justify-center my-8'>
+            <progress className="progress bg-orange-500 w-1/2 mt-10 text-center mx-auto"></progress>
+        </div>;
     }
     if (user){
         return children ;

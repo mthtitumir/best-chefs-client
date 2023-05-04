@@ -6,6 +6,8 @@ const Recipes = ({ chefRecipes }) => {
     return (
 
         <div>
+            
+            <h1 className='text-5xl text-center my-8 font-semibold'>Recipes</h1>
             {
                 chefRecipes.map(singleRecipes => <SingleRecipes
                 key={singleRecipes.id}
