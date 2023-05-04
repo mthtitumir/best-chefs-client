@@ -4,13 +4,15 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log('environment variable', import.meta.env.VITE_PASS);
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCgm-F8GAUlxXPB_qbMgxhe0Y7YgkCrJuc",
-  authDomain: "best-chefs-4d973.firebaseapp.com",
-  projectId: "best-chefs-4d973",
-  storageBucket: "best-chefs-4d973.appspot.com",
-  messagingSenderId: "33425462350",
-  appId: "1:33425462350:web:bdba8e9aa14ba3065c5f1f"
+  apiKey:import.meta.env.VITE_apiKey,
+  authDomain:import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId:import.meta.env.VITE_appId
 };
 
 // Initialize Firebase

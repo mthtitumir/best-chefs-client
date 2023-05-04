@@ -7,6 +7,7 @@ const SingleRecipes = ({ singleRecipes }) => {
     const notify = () => toast("Recipe Added to Favorite!");
     const handleOnClick = event => {
         event.currentTarget.disable = true;
+        notify();
     }
     return (
         <div className=" card full bg-base-100 shadow-xl mt-3">
@@ -25,8 +26,8 @@ const SingleRecipes = ({ singleRecipes }) => {
                     <p>{cooking_method}</p>
                 </div>
             </div>
-            <button onClick={notify} className='px-3 py-2 rounded mb-5 text-white font-semibold bg-orange-500 hover:bg-orange-700 w-1/12 mx-auto'>Favourite</button>
-
+            <button onClick={handleOnClick} className='px-3 py-2 rounded mb-5 text-white font-semibold bg-orange-500 hover:bg-orange-700 w-1/12 mx-auto'>Favourite</button>
+            <button onClick={handleOnClick} className='btn'>Hello</button>
             <ToastContainer />
         </div>
     );
