@@ -18,7 +18,7 @@ const ChefRecipes = () => {
     const chefRecipes = recipes.filter(recipe => recipe.category===id);
     console.log(chefRecipes);
     return (
-        <div className='container mx-auto'>
+        <div className='container mx-auto my-5'>
             <ChefProfileDetails chef={chef}></ChefProfileDetails>
             <Recipes chefRecipes={chefRecipes}></Recipes>
         </div>
