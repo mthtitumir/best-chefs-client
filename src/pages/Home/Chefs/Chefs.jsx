@@ -5,7 +5,7 @@ import { BsFire } from 'react-icons/bs';
 const Chefs = () => {
     const [chefs, setChefs] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:7000/chefs')
+        fetch('https://best-chefs-server-mthtitumir.vercel.app/chefs')
             .then(res => res.json())
             .then(data => setChefs(data))
     }, [])

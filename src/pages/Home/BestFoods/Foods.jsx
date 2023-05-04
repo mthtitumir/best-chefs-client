@@ -5,7 +5,7 @@ import FoodCard from './FoodCard';
 const Foods = () => {
     const [foods, setFoods] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:7000/foods')
+        fetch('https://best-chefs-server-mthtitumir.vercel.app/foods')
             .then(res => res.json())
             .then(data => setFoods(data))
     }, []);

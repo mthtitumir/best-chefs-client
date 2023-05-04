@@ -7,20 +7,20 @@ const ChefRecipes = () => {
     const recipes = useLoaderData();
     const [chefs, setChefs] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:7000/chefs')
+        fetch('https://best-chefs-server-mthtitumir.vercel.app/chefs')
             .then(res => res.json())
             .then(data => setChefs(data))
     }, []);
     const { id } = useParams();
     console.log(chefs);
-    const chef = chefs.find(searchingChef => searchingChef.chefId===id) || {};
+    const chef = chefs.find(searchingChef => searchingChef.chefId === id) || {};
     console.log(chef, id);
-    const chefRecipes = recipes.filter(recipe => recipe.category===id);
+    const chefRecipes = recipes.filter(recipe => recipe.category === id);
     console.log(chefRecipes);
     return (
         <div className='container mx-auto my-5'>
             <ChefProfileDetails chef={chef}></ChefProfileDetails>
-            
+
             <Recipes chefRecipes={chefRecipes}></Recipes>
         </div>
     );

@@ -15,5 +15,4 @@ const FoodCard = ({ food }) => {
         </div>
     );
 };
-
 export default FoodCard;

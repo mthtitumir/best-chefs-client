@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             {
                 path: 'blogs',
                 element: <BlogLayout></BlogLayout>,
-                loader: () => fetch('http://localhost:7000/blogs')
+                loader: () => fetch('https://best-chefs-server-mthtitumir.vercel.app/blogs')
             }
         ]
     },
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
             {
                 path: ':id',
                 element: <PrivateRoot><ChefRecipes></ChefRecipes></PrivateRoot>,
-                loader: ({ params }) => fetch(`http://localhost:7000/recipes/${params.id}`)
+                loader: ({ params }) => fetch(`https://best-chefs-server-mthtitumir.vercel.app/recipes/${params.id}`)
             }
         ]
     }
