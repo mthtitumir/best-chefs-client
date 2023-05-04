@@ -1,13 +1,11 @@
 import React from 'react';
-import NavBar from '../pages/Shared/Headeer/NavBar/NavBar';
-import Footer from '../pages/Shared/Footer/Footer';
-import Blog from '../pages/Blog/Blog';
+import Blog from './Blogs/Blog';
 import { useLoaderData } from 'react-router-dom';
 import Pdf from "react-to-pdf";
 
 
 const ref = React.createRef();
-const BlogLayout = () => {
+const Blogs = () => {
     const blogs = useLoaderData();
     return (
         <div ref={ref}>
@@ -30,4 +28,4 @@ const BlogLayout = () => {
     );
 };
 
-export default BlogLayout;
+export default Blogs;

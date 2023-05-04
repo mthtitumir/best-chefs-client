@@ -13,13 +13,13 @@ const PrivateRoot = ({children}) => {
     console.log('user ekhon private roote ase', user);
     if(loading){
         return <div className='flex items-center justify-center my-8'>
-            <progress className="progress bg-orange-500 w-1/2 mt-10 text-center mx-auto"></progress>
+            <progress className="progress bg-sky-600 w-1/2 mt-10 text-center mx-auto"></progress>
         </div>;
     }
     if (user){
         return children ;
     }
-    return <Navigate state={{from: location}} to='login' replace></Navigate>
+    return <Navigate state={{from: location}} to='/login' replace></Navigate>
     
 };
 

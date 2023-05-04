@@ -1,13 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/Main";
-import LoginLayout from "../layouts/LoginLayout";
 import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
-import RecipesLayout from "../layouts/RecipesLayout";
 import ChefRecipes from "../pages/Recipes/ChefsRecipes/ChefRecipes";
 import PrivateRoot from "./PrivateRoot";
-import BlogLayout from "../layouts/BlogLayout";
-import Blog from "../pages/Blog/Blog";
+import Blogs from "../pages/Blogs";
 import Home from "../pages/Home/Home/Home";
 import AllRecipes from "../pages/Recipes/AllRecipes/AllRecipes";
 import AllChefs from "../pages/Home/Chefs/AllChefs";
@@ -33,37 +30,23 @@ const router = createBrowserRouter([
             },
             {
                 path: 'blogs',
-                element: <BlogLayout></BlogLayout>,
+                element: <Blogs></Blogs>,
                 loader: () => fetch('https://best-chefs-server-mthtitumir.vercel.app/blogs')
-            }
-        ]
-    },
-    {
-        path: '/',
-        element: <LoginLayout></LoginLayout>,
-        errorElement: <ErrorPage />,
-        children: [
-            {
-                path: '/login',
-                element: <Login></Login>,
             },
             {
-                path: '/register',
-                element: <Register></Register>,
-            }
-        ]
-    },
-    {
-        path: '/recipes',
-        element: <RecipesLayout></RecipesLayout>,
-        errorElement: <ErrorPage />,
-        children: [
+                path: 'login',
+                element: <Login></Login>
+            },
             {
-                path: ':id',
+                path: 'register',
+                element: <Register></Register>
+            },
+            {
+                path: 'recipes/:id',
                 element: <PrivateRoot><ChefRecipes></ChefRecipes></PrivateRoot>,
                 loader: ({ params }) => fetch(`https://best-chefs-server-mthtitumir.vercel.app/recipes/${params.id}`)
             }
         ]
-    }
+    },
 ]);
 export default router;

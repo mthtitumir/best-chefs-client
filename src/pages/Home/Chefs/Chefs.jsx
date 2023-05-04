@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import Chef from './Chef';
 import { BsFire } from 'react-icons/bs';

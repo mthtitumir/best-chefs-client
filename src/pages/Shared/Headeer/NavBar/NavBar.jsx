@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useContext } from 'react';
 import logo from '../../../../assets/logo-bc.png'
 import { NavLink, Link } from 'react-router-dom';

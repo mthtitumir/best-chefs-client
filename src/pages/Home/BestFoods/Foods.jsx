@@ -12,8 +12,8 @@ const Foods = () => {
     console.log(foods);
     return (
         <div className='container mx-auto mt-10'>
-            <h2 className='text-5xl font-semibold text-center'>Our Best Creations</h2>
-            <div className='mt-10 flex flex-col gap-3'>
+            <h2 className='text-5xl font-semibold text-center'>Best Chinese Foods</h2>
+            <div className='mt-6 flex flex-col gap-3'>
                 {
                     foods.map(food => <FoodCard
                         key={food.id}
