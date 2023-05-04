@@ -18,9 +18,3 @@
 https://best-chefs-4d973.web.app/
 
 
-
-
-
-- Github - https://github.com/mthtitumir
-- Email - titumirgccc@gmail.com
-- Facebook - www.facebook.com/mthtitumir2018
