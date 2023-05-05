@@ -1,5 +1,5 @@
 import React from 'react';
-import Blog from './Blogs/Blog';
+import Blog from './Blog';
 import { useLoaderData } from 'react-router-dom';
 import Pdf from "react-to-pdf";
 

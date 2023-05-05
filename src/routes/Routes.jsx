@@ -4,7 +4,7 @@ import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
 import ChefRecipes from "../pages/Recipes/ChefsRecipes/ChefRecipes";
 import PrivateRoot from "./PrivateRoot";
-import Blogs from "../pages/Blogs";
+import Blogs from "../pages/Blogs/Blogs";
 import Home from "../pages/Home/Home/Home";
 import AllRecipes from "../pages/Recipes/AllRecipes/AllRecipes";
 import AllChefs from "../pages/Home/Chefs/AllChefs";

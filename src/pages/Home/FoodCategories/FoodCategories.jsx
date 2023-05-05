@@ -10,10 +10,10 @@ import italian from '../../../assets/food-cat/italian-food.jpeg';
 import maxican from '../../../assets/food-cat/maxican-food.jpeg';
 
 const FoodCategories = () => {
-    const { images, setImages } = useState([]);
-    useEffect(() => {
-        fetch('')
-    }, [])
+    // const { images, setImages } = useState([]);
+    // useEffect(() => {
+    //     fetch('')
+    // }, [])
     return (
         <div className='container mx-auto rounded-xl'>
             <h1 className='text-center text-5xl font-semibold my-10'>Food Categories</h1>
