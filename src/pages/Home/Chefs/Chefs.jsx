@@ -35,7 +35,7 @@ const Chefs = () => {
                         </div>
                     </div>
                     :
-                    <div className='flex justify-center items-center  my-8'>
+                    <div className='my-8'>
                         <h2 className='my-5 text-center font-semibold'>All Chefs Data is Loading</h2>
                         <Spinner></Spinner>
                     </div>
