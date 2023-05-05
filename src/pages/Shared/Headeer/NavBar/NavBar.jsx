@@ -47,7 +47,7 @@ const NavBar = () => {
             <div className="navbar-end">
                 {user ?
                     <div className="flex gap-2">
-                        <img title={user.displayName} className='h-9 rounded-[50%]' src={user.photoURL? user.photoURL:"https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg"} alt="" />
+                        <Link to='/profile'><img title={user.displayName} className='h-9 rounded-[50%]' src={user.photoURL? user.photoURL:"https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg"} alt="" /></Link>
                         <button onClick={handleLogOut} className="px-3 py-1 rounded-md font-semibold text-black bg-orange-400">Logout</button>
                     </div> :
                     <Link to='login' className="px-3 py-1 rounded-md font-semibold text-black bg-orange-400">Login</Link>}

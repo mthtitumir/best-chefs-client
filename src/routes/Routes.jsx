@@ -9,6 +9,8 @@ import Home from "../pages/Home/Home/Home";
 import AllRecipes from "../pages/Recipes/AllRecipes/AllRecipes";
 import AllChefs from "../pages/Home/Chefs/AllChefs";
 import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
+import Profile from "../pages/Profile/Profile";
+import AboutUs from "../pages/AboutUs/AboutUs";
 
 const router = createBrowserRouter([
     {
@@ -45,6 +47,14 @@ const router = createBrowserRouter([
                 path: 'recipes/:id',
                 element: <PrivateRoot><ChefRecipes></ChefRecipes></PrivateRoot>,
                 loader: ({ params }) => fetch(`https://best-chefs-server-mthtitumir.vercel.app/recipes/${params.id}`)
+            },
+            {
+                path: 'profile',
+                element: <Profile></Profile>
+            },
+            {
+                path: 'about-us',
+                element: <AboutUs></AboutUs>
             }
         ]
     },

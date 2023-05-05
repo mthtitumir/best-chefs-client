@@ -35,6 +35,7 @@ const Foods = () => {
                     </div>
                     :
                     <div className='flex justify-center items-center  my-8'>
+                        <h2 className='my-5 text-center font-semibold'>All Best Food Data is Loading</h2>
                         <Spinner></Spinner>
                     </div>
             }
